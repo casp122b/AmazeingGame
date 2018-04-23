@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtonHandler : MonoBehaviour {
 
+    public void CreateProfileBtn(string newGame)
+    {
+        SceneManager.LoadScene(newGame);
+    }
+
     public void StartGameBtn(string newGame)
     {
         SceneManager.LoadScene(newGame);
