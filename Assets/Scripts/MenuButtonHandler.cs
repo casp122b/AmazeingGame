@@ -19,4 +19,14 @@ public class MenuButtonHandler : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void BackBtn(string MenuScene)
+    {
+        SceneManager.LoadScene(MenuScene);
+    }
+
+    public void SettingsBtn(string SettingsScene)
+    {
+        SceneManager.LoadScene(SettingsScene);
+    }
 }
