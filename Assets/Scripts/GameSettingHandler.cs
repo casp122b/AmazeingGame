@@ -12,7 +12,10 @@ public class GameSettingHandler : MonoBehaviour {
 
     void Update()
     {
-        music.volume = Volume.value;
+        if (Volume)
+        {
+            music.volume = Volume.value;
+        }
     }
 
     public void SetMasterVolume(float value)
