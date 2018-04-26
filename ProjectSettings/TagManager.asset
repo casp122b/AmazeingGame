@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ColliderLayer
   - 
   - 
   - 
@@ -44,9 +44,12 @@ TagManager:
   - name: Background
     uniqueID: 2275744561
     locked: 0
+  - name: Wall
+    uniqueID: 3321513643
+    locked: 0
   - name: Obstacle
     uniqueID: 2529111281
     locked: 0
-  - name: Wall
-    uniqueID: 3321513643
+  - name: Unit
+    uniqueID: 1254015295
     locked: 0
