@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4173375306750108}
   - component: {fileID: 212435153322735658}
   - component: {fileID: 95993156924173338}
-  - component: {fileID: 70276377499142770}
   - component: {fileID: 50803750120672000}
+  - component: {fileID: 61657917048170536}
   m_Layer: 8
   m_Name: Enemy1
   m_TagString: Untagged
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &70276377499142770
-CapsuleCollider2D:
+--- !u!61 &61657917048170536
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -76,8 +76,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!95 &95993156924173338
 Animator:
   serializedVersion: 3
