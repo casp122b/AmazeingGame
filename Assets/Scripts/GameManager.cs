@@ -6,8 +6,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
-
     public BoardManager boardScript;
+    public int healthPoints = 100;
+    [HideInInspector] public bool playersTurn;
 
     private int level = 3;
 
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
         boardScript = GetComponent<BoardManager>();
         InitGame();
+    }
+
+    public void GameOver()
+    {
+        enabled = false;
     }
 
     void InitGame()
