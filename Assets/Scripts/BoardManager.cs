@@ -31,8 +31,9 @@ public class BoardManager : MonoBehaviour {
     public GameObject[] outerWallTiles;
 
     private Transform boardHolder;
-    private List<Vector3> gridPositions = new List<Vector3>();
+    private List<Vector3> gridPositions = new List<Vector3>(); //A list of possible locations to place tiles.
 
+    //Clears our list gridPositions and prepares it to generate a new board.
     void InitializeList()
     {
         gridPositions.Clear();
@@ -46,6 +47,7 @@ public class BoardManager : MonoBehaviour {
         }
     }
 
+    //Sets up the outer walls and floor (background) of the game board.
     void BoardSetup()
     {
         boardHolder = new GameObject("Board").transform;
@@ -65,6 +67,7 @@ public class BoardManager : MonoBehaviour {
         }
     }
 
+    //RandomPosition returns a random position from our list gridPositions.
     Vector3 RandomPosition()
     {
         int randomIndex = Random.Range(0, gridPositions.Count);
@@ -73,6 +76,7 @@ public class BoardManager : MonoBehaviour {
         return randomPosition;
     }
 
+    //LayoutObjectAtRandom accepts an array of game objects to choose from along with a minimum and maximum range for the number of objects to create.
     void LayoutObjectAtRandom(GameObject[] tileArray, int minimum, int maximum)
     {
         int objectCount = Random.Range(minimum, maximum + 1);
@@ -85,6 +89,7 @@ public class BoardManager : MonoBehaviour {
         }
     }
 
+    //SetupScene initializes our level and calls the previous functions to lay out the game board
     public void SetupScene(int level)
     {
         BoardSetup();
