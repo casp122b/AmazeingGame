@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - Exit
   layers:
   - Default
   - TransparentFX
@@ -42,20 +43,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 2275744561
-    locked: 0
   - name: Floor
     uniqueID: 3967618025
     locked: 0
   - name: Item
     uniqueID: 1813152515
-    locked: 0
-  - name: Wall
-    uniqueID: 3321513643
-    locked: 0
-  - name: Obstacle
-    uniqueID: 2529111281
     locked: 0
   - name: Unit
     uniqueID: 1254015295

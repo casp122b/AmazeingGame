@@ -175,8 +175,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 0
+  m_HDR: 1
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -221,7 +221,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4605545145163110, guid: a6cd12ef0d6ff3f44a0ed52a2fbb0830, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4605545145163110, guid: a6cd12ef0d6ff3f44a0ed52a2fbb0830, type: 2}
       propertyPath: m_LocalPosition.z
@@ -246,6 +246,11 @@ Prefab:
     - target: {fileID: 4605545145163110, guid: a6cd12ef0d6ff3f44a0ed52a2fbb0830, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114181087218475736, guid: a6cd12ef0d6ff3f44a0ed52a2fbb0830,
+        type: 2}
+      propertyPath: moveTime
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6cd12ef0d6ff3f44a0ed52a2fbb0830, type: 2}

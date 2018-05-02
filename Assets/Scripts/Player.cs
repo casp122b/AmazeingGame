@@ -13,11 +13,14 @@ public class Player : MovingObject {
 
     private Animator animator;
     private int health;
+    private SpriteRenderer _renderer;
 
     //Start overrides the Start function of MovingObject
     protected override void Start ()
     {
         animator = GetComponent<Animator>();
+
+        _renderer = GetComponent<SpriteRenderer>();
 
         health = GameManager.instance.healthPoints;
 
@@ -44,9 +47,17 @@ public class Player : MovingObject {
         //Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
         vertical = (int)Input.GetAxisRaw("Vertical");
 
+        
+
         //Check if moving horizontally, if so set vertical to zero.
         if (horizontal != 0)
+        {
             vertical = 0;
+            if (horizontal < 0)
+                _renderer.flipX = true;
+            else if (horizontal > 0)
+                _renderer.flipX = false;
+        }
 
         //Check if we have a non-zero value for horizontal or vertical
         if (horizontal != 0 || vertical != 0)
@@ -95,7 +106,7 @@ public class Player : MovingObject {
     //Restart reloads the scene when called.
     private void Restart()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(1);
     }
 
     //TakeDamage is called when an enemy attacks the player.
