@@ -554,7 +554,8 @@ PlayerSettings:
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Standalone: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Amazeing Gladiators
@@ -633,9 +634,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 5cdf7ec6-993d-41e5-a7ac-a4fadd7cd2b7
+  cloudProjectId: 3d34385b-37a5-43a3-ba55-bc405b682a28
   projectName: Amazeing Gladiators
-  organizationId: unity_zjtqsapulmel9a
+  organizationId: kks015
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
