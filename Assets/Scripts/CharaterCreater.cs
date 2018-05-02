@@ -1,6 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Firebase.Auth;
+using Firebase;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharaterCreater : MonoBehaviour {
@@ -51,5 +52,22 @@ public class CharaterCreater : MonoBehaviour {
             return EMAIL_ERROR_CODE;
         }
             return crnECode;
+    }
+
+    public void ButtonPressed()
+    {
+        FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(emailField.text, passwordField.text).
+            ContinueWith((GameObject) => 
+            {
+                SceneManager.LoadSceneAsync("ProfileScene");
+            });
+    }
+    public void CreateUserButton()
+    {
+        FirebaseAuth.DefaultInstance.CreateUserWithEmailAndPasswordAsync(emailField.text, passwordField.text).
+            ContinueWith((GameObject) => 
+            {
+            SceneManager.LoadSceneAsync("ProfileScene");
+            });
     }
 }
