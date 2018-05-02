@@ -67,7 +67,8 @@ public class CharaterCreater : MonoBehaviour {
         FirebaseAuth.DefaultInstance.CreateUserWithEmailAndPasswordAsync(emailField.text, passwordField.text).
             ContinueWith((GameObject) => 
             {
-            SceneManager.LoadSceneAsync("ProfileScene");
+                CreateCharater();
+            SceneManager.LoadSceneAsync("Level1");
             });
     }
 }
