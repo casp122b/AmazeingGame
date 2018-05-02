@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Player : MovingObject {
 
     public int wallDamage = 1;
+    public int enemyDamage = 10;
     public int pointsPerPotion = 70;
     public float restartLevelDelay = 1f;
 
@@ -123,6 +124,17 @@ public class Player : MovingObject {
     {
         //Check if the health point total is less than or equal to zero.
         if (health <= 0)
+        {
+            animator.SetTrigger("isDead");
             GameManager.instance.GameOver();
+        }
+            
+    }
+
+    protected void AttackEnemy<T>(T component)
+    {
+        Enemy hitEnemy = component as Enemy;
+        hitEnemy.DamageEnemy(enemyDamage);
+        animator.SetTrigger("Attack");
     }
 }

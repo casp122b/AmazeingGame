@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MovingObject {
 
     public int playerDamage;
+    public int hp = 20;
 
     private Animator animator;
     private Transform target;
@@ -59,5 +60,12 @@ public class Enemy : MovingObject {
         Player hitPlayer = component as Player;
         animator.SetTrigger("eAttack");
         hitPlayer.TakeDamage(playerDamage);
+    }
+
+    public void DamageEnemy(int loss)
+    {
+        hp -= loss;
+        if (hp <= 0)
+            gameObject.SetActive(false);
     }
 }
