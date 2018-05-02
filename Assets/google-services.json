@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "904782164665",
+    "firebase_url": "https://a-maze-inggladiator.firebaseio.com",
+    "project_id": "a-maze-inggladiator",
+    "storage_bucket": "a-maze-inggladiator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904782164665:android:ed50c7dedf5e994b",
+        "android_client_info": {
+          "package_name": "com.Amazeing.AmazeingGame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904782164665-i95cislb5b5b76s9pqrt2hg508v4no4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7WP0cq12KY9CzjyhKJgov1__KhhgKq1c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
