@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+//Player inherits from MovingObject, Enemy also inherits from this.
 public class Player : MovingObject {
 
     public int wallDamage = 1;
@@ -12,37 +14,47 @@ public class Player : MovingObject {
     private Animator animator;
     private int health;
 
-	// Use this for initialization
-	protected override void Start () {
+    //Start overrides the Start function of MovingObject
+    protected override void Start ()
+    {
         animator = GetComponent<Animator>();
 
         health = GameManager.instance.healthPoints;
 
         base.Start();
-	}
+    }
 
+    //This function is called when the behaviour becomes disabled or inactive.
     private void OnDisable()
     {
         GameManager.instance.healthPoints = health;
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
+        //If it's not the player's turn, exit the function.
         if (!GameManager.instance.playersTurn) return;
 
         int horizontal = 0;
         int vertical = 0;
 
+        //Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
         horizontal = (int)Input.GetAxisRaw("Horizontal");
+        //Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
         vertical = (int)Input.GetAxisRaw("Vertical");
 
+        //Check if moving horizontally, if so set vertical to zero.
         if (horizontal != 0)
             vertical = 0;
 
+        //Check if we have a non-zero value for horizontal or vertical
         if (horizontal != 0 || vertical != 0)
             AttemptMove<Wall>(horizontal, vertical); 
 	}
 
+    //AttemptMove overrides the AttemptMove function in the base class MovingObject
+    //AttemptMove takes a generic parameter T which for Player will be of the type Wall, it also takes integers for x and y direction to move in.
     protected override void AttemptMove<T>(int xDir, int yDir)
     {
         base.AttemptMove<T>(xDir, yDir);
@@ -52,14 +64,17 @@ public class Player : MovingObject {
         GameManager.instance.playersTurn = false;
     }
 
+    //OnTriggerEnter2D is sent when another object enters a trigger collider attached to this object.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Exit")
+        //Check if the tag of the trigger collided with is Exit.
+        if (collision.tag == "Exit")
         {
             Invoke("Restart", restartLevelDelay);
             enabled = false;
         }
-        else if(collision.tag == "Item")
+        //Check if the tag of the trigger collided with is Item.
+        else if (collision.tag == "Item")
         {
             health += pointsPerPotion;
             if (health >= 100)
@@ -68,6 +83,8 @@ public class Player : MovingObject {
         }
     }
 
+    //OnCantMove overrides the abstract function OnCantMove in MovingObject.
+    //It takes a generic parameter T which in the case of Player is a Wall which the player can attack and destroy.
     protected override void OnCantMove<T>(T component)
     {
         Wall hitWall = component as Wall;
@@ -75,11 +92,14 @@ public class Player : MovingObject {
         animator.SetTrigger("Attack");
     }
 
+    //Restart reloads the scene when called.
     private void Restart()
     {
         SceneManager.LoadScene(4);
     }
 
+    //TakeDamage is called when an enemy attacks the player.
+    //It takes a parameter loss which specifies how many points to lose.
     public void TakeDamage(int loss)
     {
         animator.SetTrigger("isHit");
@@ -87,8 +107,10 @@ public class Player : MovingObject {
         CheckIfGameOver();
     }
 
+    //CheckIfGameOver checks if the player is out of health points and if so, ends the game.
     private void CheckIfGameOver()
     {
+        //Check if the health point total is less than or equal to zero.
         if (health <= 0)
             GameManager.instance.GameOver();
     }
