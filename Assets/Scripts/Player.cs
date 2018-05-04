@@ -130,11 +130,4 @@ public class Player : MovingObject {
         }
             
     }
-
-    protected void AttackEnemy<T>(T component)
-    {
-        Enemy hitEnemy = component as Enemy;
-        hitEnemy.DamageEnemy(enemyDamage);
-        animator.SetTrigger("Attack");
-    }
 }
