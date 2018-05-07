@@ -100,8 +100,19 @@ public class Player : MovingObject {
     protected override void OnCantMove<T>(T component)
     {
         Wall hitWall = component as Wall;
-        hitWall.DamageWall(wallDamage);
-        animator.SetTrigger("Attack");
+        Enemy hitEnemy = component as Enemy;
+        if (component == hitWall)
+        {
+            hitWall.DamageWall(wallDamage);
+            animator.SetTrigger("Attack");
+            Debug.Log("Wall Hit");
+        }
+        else if(component == hitEnemy)
+        {
+            hitEnemy.DamageEnemy(enemyDamage);
+            animator.SetTrigger("Attack");
+            Debug.Log("Enemy Hit");
+        }
     }
 
     //Restart reloads the scene when called.

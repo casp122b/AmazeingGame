@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public BoardManager boardScript;
     public int healthPoints = 100;
+    public int enemyHealthPoints = 20;
     [HideInInspector] public bool playersTurn;
 
     private int level = 3;

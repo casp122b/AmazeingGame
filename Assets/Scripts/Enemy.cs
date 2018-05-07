@@ -6,16 +6,17 @@ using UnityEngine;
 public class Enemy : MovingObject {
 
     public int playerDamage;
-    public int hp = 20;
 
     private Animator animator;
     private Transform target;
     private bool skipTurn;
+    public int hp;
 
     //Start overrides the virtual Start function of the base class.
     protected override void Start ()
     {
         GameManager.instance.AddEnemyToList(this);
+        hp = GameManager.instance.enemyHealthPoints;
         animator = GetComponent<Animator>();
         //Find the Player GameObject using the Player tag and store a reference to the transform component.
         target = GameObject.FindGameObjectWithTag("Player").transform;
