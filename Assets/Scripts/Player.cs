@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -8,9 +9,10 @@ using UnityEngine.SceneManagement;
 public class Player : MovingObject {
 
     public int wallDamage = 1;
-    public int enemyDamage = 10;
+    public int enemyDamage = 20;
     public int pointsPerPotion = 70;
     public float restartLevelDelay = 1f;
+    public Text healthText;
 
     private Animator animator;
     private int health;
@@ -24,6 +26,8 @@ public class Player : MovingObject {
         _renderer = GetComponent<SpriteRenderer>();
 
         health = GameManager.instance.healthPoints;
+
+        healthText.text = "Health: " + health;
 
         base.Start();
     }
@@ -97,6 +101,7 @@ public class Player : MovingObject {
             if (health >= 100)
                 health = 100;
             collision.gameObject.SetActive(false);
+            healthText.text = "Health: " + health;
         }
     }
 
@@ -130,6 +135,7 @@ public class Player : MovingObject {
     {
         animator.SetTrigger("isHit");
         health -= loss;
+        healthText.text = "Health; " + health;
         CheckIfGameOver();
     }
 

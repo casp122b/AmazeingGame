@@ -122,8 +122,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   wallDamage: 1
+  enemyDamage: 30
   pointsPerPotion: 70
   restartLevelDelay: 1
+  healthText: {fileID: 0}
 --- !u!212 &212558064573313400
 SpriteRenderer:
   m_ObjectHideFlags: 1

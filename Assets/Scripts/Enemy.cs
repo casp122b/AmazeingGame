@@ -10,7 +10,7 @@ public class Enemy : MovingObject {
     private Animator animator;
     private Transform target;
     private bool skipTurn;
-    public int hp;
+    private int hp;
 
     //Start overrides the virtual Start function of the base class.
     protected override void Start ()
