@@ -650,6 +650,16 @@ Prefab:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1021980740}
+    - target: {fileID: 212558064573313400, guid: a6cd12ef0d6ff3f44a0ed52a2fbb0830,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 212558064573313400, guid: a6cd12ef0d6ff3f44a0ed52a2fbb0830,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6cd12ef0d6ff3f44a0ed52a2fbb0830, type: 2}
   m_IsPrefabParent: 0
