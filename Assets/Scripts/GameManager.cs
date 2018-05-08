@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public int enemyHealthPoints = 20;
     [HideInInspector] public bool playersTurn;
 
-    private int level = 3;
+    private int level = 10;
     private List<Enemy> enemies;
     private bool enemiesMoving;
 

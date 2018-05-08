@@ -62,7 +62,12 @@ public class Player : MovingObject {
 
         //Check if we have a non-zero value for horizontal or vertical
         if (horizontal != 0 || vertical != 0)
-            AttemptMove<Wall>(horizontal, vertical); 
+        {
+            AttemptMove<Wall>(horizontal, vertical);
+            AttemptMove<Enemy>(horizontal, vertical);
+        }
+            
+            
 	}
 
     //AttemptMove overrides the AttemptMove function in the base class MovingObject
@@ -105,13 +110,11 @@ public class Player : MovingObject {
         {
             hitWall.DamageWall(wallDamage);
             animator.SetTrigger("Attack");
-            Debug.Log("Wall Hit");
         }
-        else if(component == hitEnemy)
+        if(component == hitEnemy)
         {
             hitEnemy.DamageEnemy(enemyDamage);
             animator.SetTrigger("Attack");
-            Debug.Log("Enemy Hit");
         }
     }
 
