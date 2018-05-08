@@ -15,7 +15,7 @@ public class FirebaseRepo : ScriptableObject {
         {
             return Path.GetReferenceFromRoot(Firebase.Database.FirebaseDatabase.DefaultInstance.RootReference)
               .Push()
-              .SetRawJsonValueAsync(JsonUtility.ToJson(Item));
+              .SetRawJsonValueAsync(JsonUtility.ToJson(item));
         }
         return Task.FromResult(new object());
     }
