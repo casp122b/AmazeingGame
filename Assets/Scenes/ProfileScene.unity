@@ -1919,6 +1919,7 @@ MonoBehaviour:
   firstNameField: {fileID: 310821453}
   lastNameField: {fileID: 609286025}
   charaterNameField: {fileID: 1660176762}
+  repo: {fileID: 11400000, guid: 89a71dc04f5cc7940aaa16b097f8672d, type: 2}
 --- !u!4 &1176893915
 Transform:
   m_ObjectHideFlags: 0

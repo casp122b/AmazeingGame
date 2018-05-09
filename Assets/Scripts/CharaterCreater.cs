@@ -1,7 +1,4 @@
-﻿using Firebase.Auth;
-using Firebase;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CharaterCreater : MonoBehaviour {
@@ -14,6 +11,8 @@ public class CharaterCreater : MonoBehaviour {
     private string lastName;
     private string charaterName;
 
+    public FirebaseRepo repo;
+
     public void CreateCharater()
     {
             firstName = firstNameField.text;
@@ -22,6 +21,8 @@ public class CharaterCreater : MonoBehaviour {
 
             Debug.Log("First Name" + firstName + "Last Name" + lastName);
             Debug.Log("Charater Name" + charaterName);
+
+        repo.Push(firstName + lastName);
 
     }
 }
