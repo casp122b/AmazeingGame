@@ -122,7 +122,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   playerDamage: 23
-  hp: 65
+  enemyHit1: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  enemyHit2: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+  playerAttackSound1: {fileID: 8300000, guid: 52fa067c25c5c401b811eb86d142287e, type: 3}
+  playerAttackSound2: {fileID: 8300000, guid: b76357a42d03a4722afcba74c3073136, type: 3}
 --- !u!212 &212310057796244678
 SpriteRenderer:
   m_ObjectHideFlags: 1

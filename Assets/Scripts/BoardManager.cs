@@ -4,7 +4,8 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class BoardManager : MonoBehaviour {
+public class BoardManager : MonoBehaviour
+{
 
     [Serializable]
     public class Count

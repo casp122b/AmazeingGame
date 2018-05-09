@@ -126,6 +126,20 @@ MonoBehaviour:
   pointsPerPotion: 70
   restartLevelDelay: 1
   healthText: {fileID: 0}
+  footStep1: {fileID: 8300000, guid: 22b5b26c3429f42c482afafb562afc2a, type: 3}
+  footStep2: {fileID: 8300000, guid: a948133482bd9461cbcb85c1b36c59b7, type: 3}
+  footStep3: {fileID: 8300000, guid: 8033517be0e2b4a939b3f8ffacc6f4d5, type: 3}
+  footStep4: {fileID: 8300000, guid: f65c4ff197551410b9f70b804410c961, type: 3}
+  footStep5: {fileID: 8300000, guid: c71a1656ec801453da6b0fc7884f77fe, type: 3}
+  footStep6: {fileID: 8300000, guid: 23684c2373aa34787b0d7b3349bdd2e6, type: 3}
+  footStep7: {fileID: 8300000, guid: dd1266cc97b6b4a38a280331273cb1ed, type: 3}
+  footStep8: {fileID: 8300000, guid: 1c30db6cd8fb645049fe02656a68d721, type: 3}
+  footStep9: {fileID: 8300000, guid: 8148972f644724dc6ab272a4f7e24faa, type: 3}
+  footStep10: {fileID: 8300000, guid: a476e34385a8f43f5a7cd7280badc54f, type: 3}
+  drinkSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 2f07c3b7706a64f489133201c2342886, type: 3}
+  attackSound1: {fileID: 8300000, guid: 52fa067c25c5c401b811eb86d142287e, type: 3}
+  attackSound2: {fileID: 8300000, guid: b76357a42d03a4722afcba74c3073136, type: 3}
 --- !u!212 &212558064573313400
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -160,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 1254015295
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e70ab950968e2ef439f986ec395141c6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -168,5 +182,5 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
