@@ -15,7 +15,7 @@ public class CharaterCreater : MonoBehaviour {
     private string charaterName;
 
     public FirebaseRepo repo;
-    private DatabaseReference _Ref;
+    //private DatabaseReference _Ref;
 
     private void Awake()
     {
@@ -31,6 +31,8 @@ public class CharaterCreater : MonoBehaviour {
 
             Debug.Log("First Name" + firstName + "Last Name" + lastName);
             Debug.Log("Charater Name" + charaterName);
+
+        DatabaseReference _Ref = FirebaseDatabase.DefaultInstance.GetReference("Charater").Child("FirstName");
 
         repo.Push(firstName + lastName);
         _Ref.SetValueAsync(firstName);
