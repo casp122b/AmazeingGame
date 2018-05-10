@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
 
 public class CharaterCreater : MonoBehaviour {
 
@@ -12,6 +15,13 @@ public class CharaterCreater : MonoBehaviour {
     private string charaterName;
 
     public FirebaseRepo repo;
+    private DatabaseReference _Ref;
+
+    private void Awake()
+    {
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://a-maze-inggladiator.firebaseio.com/");
+        
+    }
 
     public void CreateCharater()
     {
@@ -23,6 +33,6 @@ public class CharaterCreater : MonoBehaviour {
             Debug.Log("Charater Name" + charaterName);
 
         repo.Push(firstName + lastName);
-
+        _Ref.SetValueAsync(firstName);
     }
 }

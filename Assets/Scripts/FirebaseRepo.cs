@@ -11,7 +11,7 @@ public class FirebaseRepo : ScriptableObject {
 
     public Task Push(object item)
     {
-        if (Firebase.Auth.FirebaseAuth.DefaultInstance.CurrentUser != null)
+        if (Firebase.Auth.FirebaseAuth.DefaultInstance.CurrentUser == null)
         {
             return Path.GetReferenceFromRoot(Firebase.Database.FirebaseDatabase.DefaultInstance.RootReference)
               .Push()
