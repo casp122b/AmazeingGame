@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MovingObject : MonoBehaviour {
+public abstract class MovingObject : MonoBehaviour
+{
 
     public float moveTime = 0.1f;
     public LayerMask colliderLayer;
@@ -12,7 +13,8 @@ public abstract class MovingObject : MonoBehaviour {
     private float inverseMoveTime;
 
     //Protected, virtual functions can be overridden by inheriting classes.
-    protected virtual void Start() {
+    protected virtual void Start()
+    {
         boxCollider = GetComponent<BoxCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
         //By storing the reciprocal of the move time we can use it by multiplying instead of dividing, this is more efficient.

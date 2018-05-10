@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 
 //Player inherits from MovingObject, Enemy also inherits from this.
-public class Player : MovingObject {
+public class Player : MovingObject
+{
 
     public int wallDamage = 1;
     public int enemyDamage = 20;
@@ -14,12 +15,27 @@ public class Player : MovingObject {
     public float restartLevelDelay = 1f;
     public Text healthText;
 
+    public AudioClip footStep1;
+    public AudioClip footStep2;
+    public AudioClip footStep3;
+    public AudioClip footStep4;
+    public AudioClip footStep5;
+    public AudioClip footStep6;
+    public AudioClip footStep7;
+    public AudioClip footStep8;
+    public AudioClip footStep9;
+    public AudioClip footStep10;
+    public AudioClip drinkSound;
+    public AudioClip gameOverSound;
+    public AudioClip attackSound1;
+    public AudioClip attackSound2;
+
     private Animator animator;
     private int health;
     private SpriteRenderer _renderer;
 
     //Start overrides the Start function of MovingObject
-    protected override void Start ()
+    protected override void Start()
     {
         animator = GetComponent<Animator>();
 
@@ -39,7 +55,7 @@ public class Player : MovingObject {
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         //If it's not the player's turn, exit the function.
         if (!GameManager.instance.playersTurn) return;
@@ -52,7 +68,7 @@ public class Player : MovingObject {
         //Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
         vertical = (int)Input.GetAxisRaw("Vertical");
 
-        
+
 
         //Check if moving horizontally, if so set vertical to zero.
         if (horizontal != 0)
@@ -70,9 +86,9 @@ public class Player : MovingObject {
             AttemptMove<Wall>(horizontal, vertical);
             AttemptMove<Enemy>(horizontal, vertical);
         }
-            
-            
-	}
+
+
+    }
 
     //AttemptMove overrides the AttemptMove function in the base class MovingObject
     //AttemptMove takes a generic parameter T which for Player will be of the type Wall, it also takes integers for x and y direction to move in.
@@ -81,6 +97,12 @@ public class Player : MovingObject {
         base.AttemptMove<T>(xDir, yDir);
 
         RaycastHit2D hit;
+
+        if(Move(xDir, yDir, out hit))
+        {
+            SoundManager.instance.RandomizeSfx(footStep1, footStep2, footStep3, footStep4, footStep5, footStep6, footStep7, footStep8, footStep9);
+        }
+
 
         GameManager.instance.playersTurn = false;
     }
@@ -101,6 +123,7 @@ public class Player : MovingObject {
             if (health >= 100)
                 health = 100;
             collision.gameObject.SetActive(false);
+            SoundManager.instance.PlaySingle(drinkSound);
             healthText.text = "Health: " + health;
         }
     }
@@ -115,11 +138,13 @@ public class Player : MovingObject {
         {
             hitWall.DamageWall(wallDamage);
             animator.SetTrigger("Attack");
+            SoundManager.instance.RandomizeSfx(attackSound1, attackSound2);
         }
-        if(component == hitEnemy)
+        if (component == hitEnemy)
         {
             hitEnemy.DamageEnemy(enemyDamage);
             animator.SetTrigger("Attack");
+            SoundManager.instance.RandomizeSfx(attackSound1, attackSound2);
         }
     }
 
@@ -145,9 +170,10 @@ public class Player : MovingObject {
         //Check if the health point total is less than or equal to zero.
         if (health <= 0)
         {
-            animator.SetTrigger("isDead");
+            SoundManager.instance.PlaySingle(gameOverSound);
+            SoundManager.instance.musicSource.Stop();
             GameManager.instance.GameOver();
         }
-            
+
     }
 }

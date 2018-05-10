@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public float levelStartDelay = 2f;
     public float turnDelay = .1f;
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver()
     {
-        levelText.text = "You made it to level " + level;
+        levelText.text = "Game Over" + Environment.NewLine + "You made it to level " + level;
         levelImage.SetActive(true);
         enabled = false;
     }
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour {
         enemiesMoving = true;
         yield return new WaitForSeconds(turnDelay);
 
-        if(enemies.Count == 0)
+        if (enemies.Count == 0)
         {
             yield return new WaitForSeconds(turnDelay);
         }

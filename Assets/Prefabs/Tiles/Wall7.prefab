@@ -123,4 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgSprite: {fileID: 21300106, guid: fbe1e7b94bb1a4a099d5bcb15a00141c, type: 3}
-  hp: 2
+  hp: 4
+  attackSound1: {fileID: 8300000, guid: 52fa067c25c5c401b811eb86d142287e, type: 3}
+  attackSound2: {fileID: 8300000, guid: b76357a42d03a4722afcba74c3073136, type: 3}
