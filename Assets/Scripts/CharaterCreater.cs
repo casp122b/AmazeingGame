@@ -23,18 +23,20 @@ public class CharaterCreater : MonoBehaviour {
         
     }
 
-    public void CreateCharater()
+    public void CreateCharater(string charaterId, string firstName, string lastName, string charaterName)
     {
+
             firstName = firstNameField.text;
             lastName = lastNameField.text;
             charaterName = charaterNameField.text;
 
+            Charater charater = new Charater(firstName, lastName, charaterName);
             Debug.Log("First Name" + firstName + "Last Name" + lastName);
             Debug.Log("Charater Name" + charaterName);
 
-        DatabaseReference _Ref = FirebaseDatabase.DefaultInstance.GetReference("Charater").Child("FirstName");
+             string json = JsonUtility.ToJson(charater);
+            DatabaseReference _Ref = FirebaseDatabase.DefaultInstance.GetReference("Charater");
 
-        repo.Push(firstName + lastName);
-        _Ref.SetValueAsync(firstName);
+            _Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
     }
 }
