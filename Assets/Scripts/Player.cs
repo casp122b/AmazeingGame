@@ -63,7 +63,7 @@ public class Player : MovingObject
 
         int horizontal = 0;
         int vertical = 0;
-
+        //Check if the game is running either in the Unity editor or in a standalone build.
 #if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
 
         //Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
@@ -82,16 +82,19 @@ public class Player : MovingObject
             else if (horizontal > 0)
                 _renderer.flipX = false;
         }
-
+        //Check if the game is running on iOS, Android, Windows Phone 8 or Unity iPhone
 #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+        //Check if Input has registered more than zero touches
         if (Input.touchCount > 0)
         {
             Touch myTouch = Input.touches[0];
 
+            //Check if the phase of that touch equals Began
             if (myTouch.phase == TouchPhase.Began)
             {
                 touchOrigin = myTouch.position;
             }
+            //If the touch phase is not Began, and instead is equal to Ended and the x of touchOrigin is greater or equal to zero:
             else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
             {
                 Vector2 touchEnd = myTouch.position;
