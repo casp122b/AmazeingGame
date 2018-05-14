@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Firebase.Unity.Editor;
+using System;
 
 public class CreateUser : MonoBehaviour {
 
@@ -21,6 +22,12 @@ public class CreateUser : MonoBehaviour {
     public void Awake()
     {
         auth = FirebaseAuth.DefaultInstance;
+        DontDestroyOnLoad(auth);
+    }
+
+    private void DontDestroyOnLoad(FirebaseAuth auth)
+    {
+        throw new NotImplementedException();
     }
 
     public void LogInButton()
