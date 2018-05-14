@@ -403,10 +403,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "You will now be creating your profile for the A\"maze\"ing Gladiator Game.\n\nPlease
-    enter your first and last name.\nChoose a password - this will be used for the
-    webforum and mobile forum. \n\nThere you will be able to discuss tactics, trade
-    items and make new friends."
+  m_Text: 'You will now be creating your profile for the A"maze"ing Gladiator Game.
+
+'
 --- !u!222 &158214661
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -689,7 +688,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1176893914}
-        m_MethodName: CreateCharater
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2241,7 +2240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 344, y: -369}
+  m_AnchoredPosition: {x: 344, y: -360}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1366476946
