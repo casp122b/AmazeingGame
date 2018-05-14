@@ -33,6 +33,7 @@ public class Player : MovingObject
     private Animator animator;
     private int health;
     private SpriteRenderer _renderer;
+    private Vector2 touchOrigin = -Vector2.one;
 
     //Start overrides the Start function of MovingObject
     protected override void Start()
@@ -63,6 +64,8 @@ public class Player : MovingObject
         int horizontal = 0;
         int vertical = 0;
 
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
+
         //Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
         horizontal = (int)Input.GetAxisRaw("Horizontal");
         //Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
@@ -79,6 +82,30 @@ public class Player : MovingObject
             else if (horizontal > 0)
                 _renderer.flipX = false;
         }
+
+#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+        if (Input.touchCount > 0)
+        {
+            Touch myTouch = Input.touches[0];
+
+            if (myTouch.phase == TouchPhase.Began)
+            {
+                touchOrigin = myTouch.position;
+            }
+            else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
+            {
+                Vector2 touchEnd = myTouch.position;
+                float x = touchEnd.x - touchOrigin.x;
+                float y = touchEnd.y - touchOrigin.y;
+                touchOrigin.x = -1;
+                if (Mathf.Abs(x) > Mathf.Abs(y))
+                    horizontal = x > 0 ? 1 : -1;
+                else
+                    vertical = y > 0 ? 1 : -1;
+            }
+        }
+
+#endif
 
         //Check if we have a non-zero value for horizontal or vertical
         if (horizontal != 0 || vertical != 0)
@@ -98,7 +125,7 @@ public class Player : MovingObject
 
         RaycastHit2D hit;
 
-        if(Move(xDir, yDir, out hit))
+        if (Move(xDir, yDir, out hit))
         {
             SoundManager.instance.RandomizeSfx(footStep1, footStep2, footStep3, footStep4, footStep5, footStep6, footStep7, footStep8, footStep9, footStep10);
         }
