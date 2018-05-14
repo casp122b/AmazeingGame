@@ -100,7 +100,7 @@ public class Player : MovingObject
 
         if(Move(xDir, yDir, out hit))
         {
-            SoundManager.instance.RandomizeSfx(footStep1, footStep2, footStep3, footStep4, footStep5, footStep6, footStep7, footStep8, footStep9);
+            SoundManager.instance.RandomizeSfx(footStep1, footStep2, footStep3, footStep4, footStep5, footStep6, footStep7, footStep8, footStep9, footStep10);
         }
 
 
