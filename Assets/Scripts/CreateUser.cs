@@ -11,41 +11,21 @@ public class CreateUser : MonoBehaviour {
     public InputField emailField;
     private string password;
     private string email;
+    private string charaterId;
 
     private static int EMAIL_ERROR_CODE = 1;
     private static int NO_ERRORS = 0;
 
-    public void ValidateEmail()
+    FirebaseAuth auth;
+
+    public void Awake()
     {
-
-        int eCode = 0;
-        eCode = EmailValidator(emailField.text, eCode);
-        if (eCode == NO_ERRORS)        
-            
-        {
-            password = passwordField.text;
-            email = emailField.text;
-
-            Debug.Log("Password" + password + "Email" + email);
-        }
-        else if (eCode == EMAIL_ERROR_CODE)
-        {
-            Debug.Log("Invalidate Email");
-        }
-    }
-
-    private int EmailValidator(string emailcheck, int crnECode)
-    {
-        if (!emailcheck.Contains("@") && !emailcheck.Contains("."))
-        {
-            return EMAIL_ERROR_CODE;
-        }
-            return crnECode;
+        auth = FirebaseAuth.DefaultInstance;
     }
 
     public void LogInButton()
     {
-        FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(emailField.text, passwordField.text).
+        auth.SignInWithEmailAndPasswordAsync(emailField.text, passwordField.text).
             ContinueWith(task => 
             {
                 if (task.IsCanceled)
@@ -58,7 +38,6 @@ public class CreateUser : MonoBehaviour {
                     Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
                     return;
                 }
-                //ValidateEmail();
                 FirebaseUser newUser = task.Result;
                 Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
@@ -67,7 +46,7 @@ public class CreateUser : MonoBehaviour {
     }
     public void CreateUserButton()
     {
-        FirebaseAuth.DefaultInstance.CreateUserWithEmailAndPasswordAsync(emailField.text, passwordField.text).
+        auth.CreateUserWithEmailAndPasswordAsync(emailField.text, passwordField.text).
             ContinueWith(task =>
             {
                 if (task.IsCanceled)
@@ -80,11 +59,12 @@ public class CreateUser : MonoBehaviour {
                     Debug.LogError("CreateUserWithEmailAndPasswordAsync encountered an error: " + task.Exception);
                     return;
                 }
-                //ValidateEmail();
                 FirebaseUser newUser = task.Result;
                 Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
                 SceneManager.LoadSceneAsync("ProfileScene");
+                charaterId = auth.CurrentUser.UserId;
+                Debug.Log("Charater Name" + charaterId);
             });
     }
 }
