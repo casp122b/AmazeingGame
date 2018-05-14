@@ -15,12 +15,6 @@ public class CreateUser : MonoBehaviour {
     private static int EMAIL_ERROR_CODE = 1;
     private static int NO_ERRORS = 0;
 
-    void Start()
-    {
-        // Set this before calling into the realtime database.
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://a-maze-inggladiator.firebaseio.com/");
-    }
-
     public void ValidateEmail()
     {
 
