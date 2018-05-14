@@ -35,13 +35,14 @@ public class CharaterCreater : MonoBehaviour {
         charaterName = charaterNameField.text;
         charaterId = auth.CurrentUser.UserId;
 
-        Charater charater = new Charater(charaterId, firstName, lastName, charaterName);
+        //Charater charater = new Charater(charaterId, firstName, lastName, charaterName);
         Debug.Log("First Name" + firstName + "Last Name" + lastName);
         Debug.Log("Charater Name" + charaterName);
+        Debug.Log("Charater Name" + charaterId);
 
-        string json = JsonUtility.ToJson(charater);
-        DatabaseReference _Ref = FirebaseDatabase.DefaultInstance.GetReference("Charater");
+        //string json = JsonUtility.ToJson(charater);
+        //DatabaseReference _Ref = FirebaseDatabase.DefaultInstance.GetReference("Charater");
 
-        _Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
+        //_Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
     }
 }
