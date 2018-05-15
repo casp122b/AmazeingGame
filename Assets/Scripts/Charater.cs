@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Charater : MonoBehaviour {
+public class Charater {
 
     string CharaterId, FirstName, LastName, CharaterName;
 
@@ -10,11 +10,11 @@ public class Charater : MonoBehaviour {
     {
     }
 
-    public Charater(string charaterId, string FirstName, string LastName, string CharaterName)
+    public Charater(string charaterId, string firstName, string lastName, string charaterName)
     {
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.CharaterName = CharaterName;
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.CharaterName = charaterName;
         this.CharaterId = charaterId;
     }
 }

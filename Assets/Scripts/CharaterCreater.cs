@@ -18,31 +18,32 @@ public class CharaterCreater : MonoBehaviour {
     private string charaterId;
 
     public FirebaseRepo repo;
-    //private DatabaseReference _Ref;
+    FirebaseAuth auth;
+    DatabaseReference _Ref;
 
     private void Awake()
     {
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://a-maze-inggladiator.firebaseio.com/");
-        
+        auth = FirebaseAuth.DefaultInstance;
+        _Ref = FirebaseDatabase.DefaultInstance.GetReference("Charater");
     }
 
     public void CreateCharater()
     {
-        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
-
+        
+        Charater charater = new Charater(charaterId, firstName, lastName, charaterName);
         firstName = firstNameField.text;
         lastName = lastNameField.text;
         charaterName = charaterNameField.text;
         charaterId = auth.CurrentUser.UserId;
 
-        //Charater charater = new Charater(charaterId, firstName, lastName, charaterName);
+        _Ref.SetValueAsync(firstName);
         Debug.Log("First Name" + firstName + "Last Name" + lastName);
         Debug.Log("Charater Name" + charaterName);
         Debug.Log("Charater Name" + charaterId);
 
-        //string json = JsonUtility.ToJson(charater);
-        //DatabaseReference _Ref = FirebaseDatabase.DefaultInstance.GetReference("Charater");
+        string json = JsonUtility.ToJson(charater);
 
-        //_Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
+        _Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
     }
 }
