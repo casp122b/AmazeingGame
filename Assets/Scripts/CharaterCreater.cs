@@ -18,33 +18,33 @@ public class CharaterCreater : MonoBehaviour {
     private string charaterId;
 
     FirebaseAuth auth;
-    //DatabaseReference _Ref;
+    DatabaseReference _Ref;
 
     private void Awake()
     {
-        Firebase.Storage.FirebaseStorage storage = Firebase.Storage.FirebaseStorage.DefaultInstance;
-        Firebase.Storage.StorageReference storage_ref = storage.GetReferenceFromUrl("gs://<a-maze-inggladiator.appspot.com>");
-        //App.DefaultInstance.SetEditorDatabaseUrl("https://a-maze-inggladiator.firebaseio.com/");
+        //Firebase.Storage.FirebaseStorage storage = Firebase.Storage.FirebaseStorage.DefaultInstance;
+        //Firebase.Storage.StorageReference storage_ref = storage.GetReferenceFromUrl("gs://<a-maze-inggladiator.appspot.com>");
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://a-maze-inggladiator.firebaseio.com/");
         auth = FirebaseAuth.DefaultInstance;
-        //_Ref = FirebaseDatabase.DefaultInstance.GetReference("Charater");
+        _Ref = FirebaseDatabase.DefaultInstance.GetReference(auth.CurrentUser.UserId);
     }
 
     public void CreateCharater()
-    {
-        
+    {        
         Charater charater = new Charater(charaterId, firstName, lastName, charaterName);
         firstName = firstNameField.text;
         lastName = lastNameField.text;
         charaterName = charaterNameField.text;
         charaterId = auth.CurrentUser.UserId;
-
-        
+                
         Debug.Log("First Name" + firstName + "Last Name" + lastName);
         Debug.Log("Charater Name" + charaterName);
         Debug.Log("Charater Name" + charaterId);
 
-        //_Ref.SetValueAsync(firstName);
-        //string json = JsonUtility.ToJson(charater);
-        //_Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
+        _Ref.SetValueAsync(firstName);
+        _Ref.SetValueAsync(lastName);
+        _Ref.SetValueAsync(charaterName);
+        string json = JsonUtility.ToJson(charater);
+        _Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
     }
 }
