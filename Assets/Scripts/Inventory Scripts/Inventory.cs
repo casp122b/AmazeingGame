@@ -32,6 +32,11 @@ public class Inventory : MonoBehaviour
         }
 
         AddItem(0);
+        AddItem(0);
+        AddItem(0);
+        AddItem(0);
+        AddItem(0);
+        AddItem(0);
         AddItem(1);
     }
 
@@ -39,20 +44,46 @@ public class Inventory : MonoBehaviour
     public void AddItem(int id)
     {
         Item itemToAdd = database.FetchItemById(id);
-        for (int i = 0; i < items.Count; i++)
+        if (itemToAdd.Stackable && CheckIfItemInInventory(itemToAdd))
         {
-            //Checks if the item ID is -1 which means it does not contain an item
-            if (items[i].ID == -1)
+            for (int i = 0; i < items.Count; i++)
             {
-                items[i] = itemToAdd;
-                GameObject itemObj = Instantiate(inventoryItem);
-                itemObj.transform.SetParent(slots[i].transform);
-                itemObj.transform.position = slots[i].transform.position;
-                itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
-                itemObj.name = itemToAdd.Title;
-                break;
+                if (items[i].ID == id)
+                {
+                    ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
+                    data.amount++;
+                    data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+                    break;
+                }
             }
         }
+        else
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                //Checks if the item ID is -1 which means it does not contain an item
+                if (items[i].ID == -1)
+                {
+                    items[i] = itemToAdd;
+                    GameObject itemObj = Instantiate(inventoryItem);
+                    itemObj.transform.SetParent(slots[i].transform);
+                    itemObj.transform.position = slots[i].transform.position;
+                    itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
+                    itemObj.name = itemToAdd.Title;
+                    break;
+                }
+            }
+        }
+    }
+
+    bool CheckIfItemInInventory(Item item)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].ID == item.ID)
+                return true;
+        }
+        return false;
     }
 
 }
