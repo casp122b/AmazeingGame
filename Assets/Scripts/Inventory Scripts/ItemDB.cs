@@ -14,8 +14,6 @@ public class ItemDB : MonoBehaviour
         //Maps the path to locate the Items.json file
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
         ConstructDatabase();
-
-        Debug.Log(FetchItemById(0).Description);
     }
 
     public Item FetchItemById(int id)
