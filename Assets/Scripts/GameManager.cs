@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public BoardManager boardScript;
     public int healthPoints = 100;
     public int enemyHealthPoints = 100;
-    public int level = 0;
+    [HideInInspector] public int level = 0;
     [HideInInspector] public bool playersTurn;
 
     private Text levelText;
