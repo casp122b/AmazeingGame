@@ -126,6 +126,7 @@ MonoBehaviour:
   pointsPerPotion: 70
   restartLevelDelay: 1
   healthText: {fileID: 0}
+  currentLevelText: {fileID: 0}
   footStep1: {fileID: 8300000, guid: 22b5b26c3429f42c482afafb562afc2a, type: 3}
   footStep2: {fileID: 8300000, guid: a948133482bd9461cbcb85c1b36c59b7, type: 3}
   footStep3: {fileID: 8300000, guid: 8033517be0e2b4a939b3f8ffacc6f4d5, type: 3}

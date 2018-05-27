@@ -14,6 +14,7 @@ public class Player : MovingObject
     public int pointsPerPotion = 70;
     public float restartLevelDelay = 1f;
     public Text healthText;
+    public Text currentLevelText;
 
     public AudioClip footStep1;
     public AudioClip footStep2;
@@ -33,6 +34,7 @@ public class Player : MovingObject
 
     private Animator animator;
     private int health;
+    private int currentLevel;
     private SpriteRenderer _renderer;
     private Vector2 touchOrigin = -Vector2.one;
 
@@ -44,6 +46,10 @@ public class Player : MovingObject
         _renderer = GetComponent<SpriteRenderer>();
 
         health = GameManager.instance.healthPoints;
+
+        currentLevel = GameManager.instance.level;
+
+        currentLevelText.text = "Level: " + currentLevel;
 
         healthText.text = "Health: " + health;
 
@@ -207,12 +213,14 @@ public class Player : MovingObject
             SoundManager.instance.PlaySingle(gameOverSound);
             SoundManager.instance.musicSource.Stop();
             GameManager.instance.GameOver();
+            GameManager.instance.level = 0;
         }
-        if(GameManager.instance.level == 20 && health != 0)
+        if(GameManager.instance.level >= 21 && health != 0)
         {
             SoundManager.instance.PlaySingle(winSound);
             SoundManager.instance.musicSource.Stop();
             GameManager.instance.YouWin();
+            GameManager.instance.level = 0;
         }
 
     }
