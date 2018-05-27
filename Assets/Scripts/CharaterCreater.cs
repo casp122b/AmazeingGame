@@ -22,14 +22,55 @@ public class CharaterCreater : MonoBehaviour {
 
     private void Awake()
     {
-        //Firebase.Storage.FirebaseStorage storage = Firebase.Storage.FirebaseStorage.DefaultInstance;
-        //Firebase.Storage.StorageReference storage_ref = storage.GetReferenceFromUrl("gs://<a-maze-inggladiator.appspot.com>");
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://a-maze-inggladiator.firebaseio.com/");
         auth = FirebaseAuth.DefaultInstance;
         _Ref = FirebaseDatabase.DefaultInstance.GetReference(auth.CurrentUser.UserId);
+        populateData();
     }
 
-    public void CreateCharater()
+    public void populateData()
+    {
+        _Ref.Child("firstname").GetValueAsync().ContinueWith(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.Log("error");
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                firstNameField.text = snapshot.Value.ToString();
+            }
+        });
+
+        _Ref.Child("lastname").GetValueAsync().ContinueWith(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.Log("error");
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                lastNameField.text = snapshot.Value.ToString();
+            }
+        });
+
+        _Ref.Child("charatername").GetValueAsync().ContinueWith(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.Log("error");
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                charaterNameField.text = snapshot.Value.ToString();
+            }
+        });
+    }
+
+        public void CreateCharater()
     {        
         Charater charater = new Charater(charaterId, firstName, lastName, charaterName);
         firstName = firstNameField.text;
@@ -41,9 +82,9 @@ public class CharaterCreater : MonoBehaviour {
         Debug.Log("Charater Name" + charaterName);
         Debug.Log("Charater Name" + charaterId);
 
-        _Ref.SetValueAsync(firstName);
-        _Ref.SetValueAsync(lastName);
-        _Ref.SetValueAsync(charaterName);
+        _Ref.Child("firstname").SetValueAsync(firstName);
+        _Ref.Child("lastname").SetValueAsync(lastName);
+        _Ref.Child("charatername").SetValueAsync(charaterName);
         string json = JsonUtility.ToJson(charater);
         _Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
     }

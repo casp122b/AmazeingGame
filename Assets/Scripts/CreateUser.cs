@@ -27,7 +27,7 @@ public class CreateUser : MonoBehaviour {
 
     private void DontDestroyOnLoad(FirebaseAuth auth)
     {
-        throw new NotImplementedException();
+
     }
 
     public void LogInButton()
