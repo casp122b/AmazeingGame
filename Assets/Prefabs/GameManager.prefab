@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c81d27e75d0154196d24e4e64a702a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 8
-  rows: 8
+  columns: 10
+  rows: 10
   wallCount:
     minimum: 5
     maximum: 9
@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423698f2e07fa704a9c0e387ef19df70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelStartDelay: 2
   turnDelay: 0.1
   boardScript: {fileID: 0}
   healthPoints: 100
   enemyHealthPoints: 100
+  level: 0
   playersTurn: 0

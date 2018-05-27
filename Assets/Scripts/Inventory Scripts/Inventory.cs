@@ -32,8 +32,21 @@ public class Inventory : MonoBehaviour
             slots[i].transform.SetParent(slotPanel.transform);
         }
 
+        inventoryPanel.SetActive(false);
+
         AddItem(0);
         AddItem(1);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (inventoryPanel.activeSelf == false)
+                inventoryPanel.SetActive(true);
+            else if (inventoryPanel.activeSelf == true)
+                inventoryPanel.SetActive(false);
+        }
     }
 
     //Used to add an item to the inventory
