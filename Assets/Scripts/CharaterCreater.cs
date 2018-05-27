@@ -41,9 +41,9 @@ public class CharaterCreater : MonoBehaviour {
         Debug.Log("Charater Name" + charaterName);
         Debug.Log("Charater Name" + charaterId);
 
-        _Ref.SetValueAsync(firstName);
-        _Ref.SetValueAsync(lastName);
-        _Ref.SetValueAsync(charaterName);
+        _Ref.Child("firstname").SetValueAsync(firstName);
+        _Ref.Child("lastname").SetValueAsync(lastName);
+        _Ref.Child("charatername").SetValueAsync(charaterName);
         string json = JsonUtility.ToJson(charater);
         _Ref.Child("charaters").Child(charaterId).SetRawJsonValueAsync(json);
     }
