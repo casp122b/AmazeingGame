@@ -14,11 +14,11 @@ public class GameManager : MonoBehaviour
     public BoardManager boardScript;
     public int healthPoints = 100;
     public int enemyHealthPoints = 100;
+    public int level = 0;
     [HideInInspector] public bool playersTurn;
 
     private Text levelText;
     private GameObject levelImage;
-    private int level = 1;
     private List<Enemy> enemies;
     private bool enemiesMoving;
     private bool doingSetup;
@@ -65,7 +65,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        levelText.text = "Game Over" + Environment.NewLine + "You made it to level " + level;
+        levelText.text = "Game Over\n" + "\nPress 'Esc' to return to Main Menu";
+        levelImage.SetActive(true);
+        enabled = false;
+    }
+
+    public void YouWin()
+    {
+        levelText.text = "You win!\n" + "Press 'Esc' to return to Main Menu";
         levelImage.SetActive(true);
         enabled = false;
     }
@@ -75,7 +82,7 @@ public class GameManager : MonoBehaviour
         doingSetup = true;
         levelImage = GameObject.Find("LevelImage");
         levelText = GameObject.Find("LevelText").GetComponent<Text>();
-        levelText.text = "Level " + level;
+        levelText.text = "Loading";
         levelImage.SetActive(true);
         Invoke("HideLevelImage", levelStartDelay);
 

@@ -61,10 +61,14 @@ public class Enemy : MovingObject
     //and takes a generic parameter T which is used to pass in the component with which it is expected to encounter, in this case Player
     protected override void OnCantMove<T>(T component)
     {
-        Player hitPlayer = component as Player;
-        animator.SetTrigger("eAttack");
-        SoundManager.instance.RandomizeSfx(enemyHit1, enemyHit2);
-        hitPlayer.TakeDamage(playerDamage);
+        if (gameObject.activeSelf == true)
+        {
+            Player hitPlayer = component as Player;
+            animator.SetTrigger("eAttack");
+            SoundManager.instance.RandomizeSfx(enemyHit1, enemyHit2);
+            hitPlayer.TakeDamage(playerDamage);
+        }
+
     }
 
     public void DamageEnemy(int loss)
