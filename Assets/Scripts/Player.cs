@@ -181,7 +181,7 @@ public class Player : MovingObject
     //Restart reloads the scene when called.
     private void Restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     //TakeDamage is called when an enemy attacks the player.

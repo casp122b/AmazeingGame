@@ -37,14 +37,14 @@ public class GameManager : MonoBehaviour
 
     //this is called only once, and the parameter tells it to be called only after the scene was loaded
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    static public void CallbackInitialization()
+    public static void CallbackInitialization()
     {
         //register the callback to be called everytime the scene is loaded
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     //This is called each time a scene is loaded.
-    static private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    private static void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
         instance.level++;
         instance.InitGame();
