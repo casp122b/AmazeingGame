@@ -23,7 +23,7 @@ public class Slot : MonoBehaviour, IDropHandler
             inventory.items[id] = droppedItem.item;
             droppedItem.slot = id;
         }
-        else
+        else if(droppedItem.slot != id)
         {
             Transform item = this.transform.GetChild(0);
             item.GetComponent<ItemData>().slot = droppedItem.slot;
