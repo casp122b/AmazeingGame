@@ -27,6 +27,7 @@ public class Player : MovingObject
     public AudioClip footStep10;
     public AudioClip drinkSound;
     public AudioClip gameOverSound;
+    public AudioClip winSound;
     public AudioClip attackSound1;
     public AudioClip attackSound2;
 
@@ -117,7 +118,10 @@ public class Player : MovingObject
             AttemptMove<Enemy>(horizontal, vertical);
         }
 
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     //AttemptMove overrides the AttemptMove function in the base class MovingObject
@@ -191,11 +195,11 @@ public class Player : MovingObject
         animator.SetTrigger("isHit");
         health -= loss;
         healthText.text = "Health; " + health;
-        CheckIfGameOver();
+        CheckIfGameHasEnded();
     }
 
     //CheckIfGameOver checks if the player is out of health points and if so, ends the game.
-    private void CheckIfGameOver()
+    private void CheckIfGameHasEnded()
     {
         //Check if the health point total is less than or equal to zero.
         if (health <= 0)
@@ -203,6 +207,12 @@ public class Player : MovingObject
             SoundManager.instance.PlaySingle(gameOverSound);
             SoundManager.instance.musicSource.Stop();
             GameManager.instance.GameOver();
+        }
+        if(GameManager.instance.level == 20 && health != 0)
+        {
+            SoundManager.instance.PlaySingle(winSound);
+            SoundManager.instance.musicSource.Stop();
+            GameManager.instance.YouWin();
         }
 
     }

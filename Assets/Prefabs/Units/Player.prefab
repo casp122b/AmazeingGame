@@ -138,6 +138,7 @@ MonoBehaviour:
   footStep10: {fileID: 8300000, guid: a476e34385a8f43f5a7cd7280badc54f, type: 3}
   drinkSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
   gameOverSound: {fileID: 8300000, guid: 2f07c3b7706a64f489133201c2342886, type: 3}
+  winSound: {fileID: 8300000, guid: 14e15f75ff87846e18aa9ba0845c8a96, type: 3}
   attackSound1: {fileID: 8300000, guid: 52fa067c25c5c401b811eb86d142287e, type: 3}
   attackSound2: {fileID: 8300000, guid: b76357a42d03a4722afcba74c3073136, type: 3}
 --- !u!212 &212558064573313400
