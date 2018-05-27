@@ -7,7 +7,7 @@
       "defense": 7
     },
     "description": "This gem grants a lesser boost because it's shiny and blue!",
-    "stackable": true,
+    "stackable": false,
     "rarity": "Common",
     "slug": "gem"
   },
