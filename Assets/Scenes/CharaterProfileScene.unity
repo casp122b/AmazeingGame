@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1110463501}
         m_MethodName: BackBtn
         m_Mode: 5
         m_Arguments:
@@ -2066,9 +2066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189daf8e20e0d4fbcfb3962ed493bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstNameField: {fileID: 0}
-  lastNameField: {fileID: 0}
-  charaterNameField: {fileID: 0}
+  firstNameField: {fileID: 967819878}
+  lastNameField: {fileID: 1623471314}
+  charaterNameField: {fileID: 123237801}
 --- !u!4 &1375832444
 Transform:
   m_ObjectHideFlags: 0
@@ -2232,7 +2232,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1110463501}
         m_MethodName: StartGameBtn
         m_Mode: 5
         m_Arguments:
