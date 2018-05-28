@@ -22,7 +22,7 @@ public class CharaterCreater : MonoBehaviour {
 
     private void Awake()
     {
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://a-maze-inggladiator.firebaseio.com/");
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://amazeinggame-a414a.firebaseio.com/");
         auth = FirebaseAuth.DefaultInstance;
         _Ref = FirebaseDatabase.DefaultInstance.GetReference(auth.CurrentUser.UserId);
     }
