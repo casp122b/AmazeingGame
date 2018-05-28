@@ -2063,12 +2063,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1375832442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0bd5f274ecd1284b9fdb3777af9953a, type: 3}
+  m_Script: {fileID: 11500000, guid: 83189daf8e20e0d4fbcfb3962ed493bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstNameField: {fileID: 967819878}
-  lastNameField: {fileID: 1623471314}
-  charaterNameField: {fileID: 123237801}
+  firstNameField: {fileID: 0}
+  lastNameField: {fileID: 0}
+  charaterNameField: {fileID: 0}
 --- !u!4 &1375832444
 Transform:
   m_ObjectHideFlags: 0
