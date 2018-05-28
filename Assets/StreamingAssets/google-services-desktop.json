@@ -1,27 +1,55 @@
 {
   "project_info": {
-    "project_number": "904782164665",
-    "firebase_url": "https://a-maze-inggladiator.firebaseio.com",
-    "project_id": "a-maze-inggladiator",
-    "storage_bucket": "a-maze-inggladiator.appspot.com"
+    "project_number": "558443986015",
+    "firebase_url": "https://amazeinggame-a414a.firebaseio.com",
+    "project_id": "amazeinggame-a414a",
+    "storage_bucket": "amazeinggame-a414a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:904782164665:android:ed50c7dedf5e994b",
+        "mobilesdk_app_id": "1:558443986015:android:3a70d89730d2140d",
         "android_client_info": {
-          "package_name": "com.Amazeing.AmazeingGame"
+          "package_name": "com.example.casper.amazeingmobile"
         }
       },
       "oauth_client": [
         {
-          "client_id": "904782164665-i95cislb5b5b76s9pqrt2hg508v4no4g.apps.googleusercontent.com",
+          "client_id": "558443986015-apdqb6d6gfbt2ev6ribeuhq42013q6qq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.casper.amazeingmobile",
+            "certificate_hash": "b38c25ffb617c654515d4cc0b5a98daee82b7122"
+          }
+        },
+        {
+          "client_id": "558443986015-nfk2agniuvj2rcrvvs56tk4bq13fkjph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.casper.amazeingmobile",
+            "certificate_hash": "7b63de757061359cac9e8dd555248bcfd0f7b4ca"
+          }
+        },
+        {
+          "client_id": "558443986015-f4aarf1v5kmv671dt0m2df5arm4eefe1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.casper.amazeingmobile",
+            "certificate_hash": "3cc8a94bc856c756e5ba4139b0d8d04d27886873"
+          }
+        },
+        {
+          "client_id": "558443986015-oo47nql5svo3cg0klrf0f5ffkkogkf0v.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "558443986015-oo47nql5svo3cg0klrf0f5ffkkogkf0v.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB7WP0cq12KY9CzjyhKJgov1__KhhgKq1c"
+          "current_key": "AIzaSyDHqPy8BBmUpN4YvTk0MBbTZRzlUyv05n0"
         }
       ],
       "services": {
@@ -29,8 +57,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558443986015-oo47nql5svo3cg0klrf0f5ffkkogkf0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
