@@ -37,6 +37,7 @@ public class Player : MovingObject
     private int currentLevel;
     private SpriteRenderer _renderer;
     private Vector2 touchOrigin = -Vector2.one;
+    private GameObject inventory;
 
     //Start overrides the Start function of MovingObject
     protected override void Start()
@@ -44,6 +45,8 @@ public class Player : MovingObject
         animator = GetComponent<Animator>();
 
         _renderer = GetComponent<SpriteRenderer>();
+
+        inventory = GameObject.Find("Inventory");
 
         health = GameManager.instance.healthPoints;
 
@@ -156,7 +159,7 @@ public class Player : MovingObject
         }
 
         //Check if the tag of the trigger collided with is Item.
-        else if (collision.tag == "Item")
+        else if (collision.tag == "Potion")
         {
             health += pointsPerPotion;
             if (health >= 100)
@@ -164,6 +167,11 @@ public class Player : MovingObject
             collision.gameObject.SetActive(false);
             SoundManager.instance.PlaySingle(drinkSound);
             healthText.text = "Health: " + health;
+        }
+        else if(collision.tag == "Item")
+        {
+            inventory.GetComponent<Inventory>().AddItem(0);
+            collision.gameObject.SetActive(false);
         }
     }
 

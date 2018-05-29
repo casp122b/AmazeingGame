@@ -24,10 +24,12 @@ public class BoardManager : MonoBehaviour
     public int rows = 8;
     public Count wallCount = new Count(5, 9);
     public Count potionCount = new Count(1, 3);
+    public Count itemCount = new Count(1, 1);
     public GameObject exit;
     public GameObject[] floorTiles;
     public GameObject[] wallTiles;
     public GameObject[] potionTiles;
+    public GameObject[] itemTiles;
     public GameObject[] enemyTiles;
     public GameObject[] outerWallTiles;
 
@@ -97,6 +99,7 @@ public class BoardManager : MonoBehaviour
         InitializeList();
         LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
         LayoutObjectAtRandom(potionTiles, potionCount.minimum, potionCount.maximum);
+        LayoutObjectAtRandom(itemTiles, itemCount.minimum, itemCount.maximum);
         int enemyCount = (int)Mathf.Log(level, 2f);
         LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
         Instantiate(exit, new Vector3(columns - 1, rows - 1, 0F), Quaternion.identity);

@@ -33,9 +33,6 @@ public class Inventory : MonoBehaviour
         }
 
         inventoryPanel.SetActive(false);
-
-        AddItem(0);
-        AddItem(1);
     }
 
     void Update()
