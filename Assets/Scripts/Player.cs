@@ -175,7 +175,6 @@ public class Player : MovingObject
         }
         else if(collision.tag == "Ring")
         {
-            Debug.Log("Yeah");
             inventory.GetComponent<Inventory>().AddItem(1);
             collision.gameObject.SetActive(false);
         }
