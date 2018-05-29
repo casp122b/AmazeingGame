@@ -61,6 +61,12 @@ MonoBehaviour:
   potionCount:
     minimum: 2
     maximum: 4
+  itemCount:
+    minimum: 1
+    maximum: 1
+  item2Count:
+    minimum: 1
+    maximum: 1
   exit: {fileID: 110520, guid: cb0f3020bafec423aa31d0e491c4b811, type: 2}
   floorTiles:
   - {fileID: 106160, guid: 038998774947c4a8fa170d5b4492a7dd, type: 2}
@@ -82,6 +88,10 @@ MonoBehaviour:
   - {fileID: 110520, guid: 741804431f4d341cdae1f15b3896aeff, type: 2}
   potionTiles:
   - {fileID: 1475223962490612, guid: 3b8707033d6f0cb4d97d3e0783919125, type: 2}
+  itemTiles:
+  - {fileID: 1113035672042762, guid: 2cffd98b2b7bc5643af676d433ef4564, type: 2}
+  item2Tiles:
+  - {fileID: 1002147212543192, guid: f1694f9e26d3b7f469c9d3300f25bcfd, type: 2}
   enemyTiles:
   - {fileID: 1845129757669088, guid: 309ab7fe0b5fe254e861b78bc5981ef9, type: 2}
   - {fileID: 1958042358238848, guid: 59f573a51a1d9bd41a7e0fc09275bf12, type: 2}

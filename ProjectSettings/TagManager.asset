@@ -8,6 +8,9 @@ TagManager:
   - Exit
   - Enemy
   - Wall
+  - Potion
+  - Gem
+  - Ring
   layers:
   - Default
   - TransparentFX
