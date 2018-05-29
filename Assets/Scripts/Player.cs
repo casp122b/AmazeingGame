@@ -47,10 +47,6 @@ public class Player : MovingObject
 
         health = GameManager.instance.healthPoints;
 
-        currentLevel = GameManager.instance.level;
-
-        currentLevelText.text = "Level: " + currentLevel;
-
         healthText.text = "Health: " + health;
 
         base.Start();
@@ -153,8 +149,19 @@ public class Player : MovingObject
         //Check if the tag of the trigger collided with is Exit.
         if (collision.tag == "Exit" && enabled)
         {
-            Invoke("Restart", restartLevelDelay);
-            enabled = false;
+            if (GameManager.instance.level >= 21 && health != 0)
+            {
+                SoundManager.instance.PlaySingle(winSound);
+                SoundManager.instance.musicSource.Stop();
+                GameManager.instance.YouWin();
+                GameManager.instance.level = 0;
+            }
+            else
+            {
+                Invoke("Restart", restartLevelDelay);
+                enabled = false;
+            }
+
         }
         //Check if the tag of the trigger collided with is Item.
         else if (collision.tag == "Item")
@@ -215,13 +222,5 @@ public class Player : MovingObject
             GameManager.instance.GameOver();
             GameManager.instance.level = 0;
         }
-        if(GameManager.instance.level >= 21 && health != 0)
-        {
-            SoundManager.instance.PlaySingle(winSound);
-            SoundManager.instance.musicSource.Stop();
-            GameManager.instance.YouWin();
-            GameManager.instance.level = 0;
-        }
-
     }
 }

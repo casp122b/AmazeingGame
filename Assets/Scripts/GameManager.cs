@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public BoardManager boardScript;
     public int healthPoints = 100;
     public int enemyHealthPoints = 100;
-    [HideInInspector] public int level = 0;
+    public int level = 0;
     [HideInInspector] public bool playersTurn;
 
     private Text levelText;
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         doingSetup = true;
         levelImage = GameObject.Find("LevelImage");
         levelText = GameObject.Find(name: "LevelText").GetComponent<Text>();
-        levelText.text = "LOADING";
+        levelText.text = "LEVEL " + level;
         levelImage.SetActive(true);
         Invoke("HideLevelImage", levelStartDelay);
 
