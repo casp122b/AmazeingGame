@@ -168,9 +168,15 @@ public class Player : MovingObject
             SoundManager.instance.PlaySingle(drinkSound);
             healthText.text = "Health: " + health;
         }
-        else if(collision.tag == "Item")
+        else if(collision.tag == "Gem")
         {
             inventory.GetComponent<Inventory>().AddItem(0);
+            collision.gameObject.SetActive(false);
+        }
+        else if(collision.tag == "Ring")
+        {
+            Debug.Log("Yeah");
+            inventory.GetComponent<Inventory>().AddItem(1);
             collision.gameObject.SetActive(false);
         }
     }
