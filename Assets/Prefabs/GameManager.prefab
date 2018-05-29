@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4542512268180344}
   - component: {fileID: 114960849430246606}
   - component: {fileID: 114241395857742574}
+  - component: {fileID: 114909485391913516}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -89,6 +90,43 @@ MonoBehaviour:
   - {fileID: 110520, guid: 7094f72151ec74f569c4e03f1ec0f8e7, type: 2}
   - {fileID: 110520, guid: b0ace21a29149403094422fb3bd96aa9, type: 2}
   - {fileID: 110520, guid: e85c94355cc4641da919bd5d0ac956d4, type: 2}
+--- !u!114 &114909485391913516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402544585771086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fed67aeff4bd7249896836c324c1482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 10
+  rows: 10
+  wallCount:
+    minimum: 5
+    maximum: 9
+  potionCount:
+    minimum: 1
+    maximum: 3
+  exit: {fileID: 110520, guid: cb0f3020bafec423aa31d0e491c4b811, type: 2}
+  floorTiles:
+  - {fileID: 110520, guid: 3e71327f62ba5eb42a1279378986d2ce, type: 2}
+  - {fileID: 110520, guid: 570154b129ade1d4bb4873f0682803d6, type: 2}
+  - {fileID: 110520, guid: 8a8b93b0d8235474389c1095216006ed, type: 2}
+  - {fileID: 110520, guid: aaf15b89b38114446b877a875bfb5a5a, type: 2}
+  wallTiles:
+  - {fileID: 110520, guid: 2570048905bd94d6f8a99d13b80daf90, type: 2}
+  - {fileID: 110520, guid: b86334000bc0f47ba8dd33ea88cfcdb1, type: 2}
+  potionTiles:
+  - {fileID: 1475223962490612, guid: 3b8707033d6f0cb4d97d3e0783919125, type: 2}
+  enemyTiles:
+  - {fileID: 1803514404096730, guid: 4e16e6cdcb2200e42b4229a52c692072, type: 2}
+  - {fileID: 1958042358238848, guid: 59f573a51a1d9bd41a7e0fc09275bf12, type: 2}
+  outerWallTiles:
+  - {fileID: 110520, guid: 7094f72151ec74f569c4e03f1ec0f8e7, type: 2}
+  - {fileID: 110520, guid: b0ace21a29149403094422fb3bd96aa9, type: 2}
+  - {fileID: 110520, guid: e85c94355cc4641da919bd5d0ac956d4, type: 2}
 --- !u!114 &114960849430246606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +141,8 @@ MonoBehaviour:
   levelStartDelay: 2
   turnDelay: 0.1
   boardScript: {fileID: 0}
+  boardScript1: {fileID: 0}
   healthPoints: 100
   enemyHealthPoints: 100
-  level: 20
+  level: 0
   playersTurn: 0

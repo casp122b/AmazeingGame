@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float turnDelay = .1f;
     public static GameManager instance = null;
     public BoardManager boardScript;
+    public BoardManager1 boardScript1;
     public int healthPoints = 100;
     public int enemyHealthPoints = 100;
     public int level = 0;
@@ -25,14 +26,17 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
-        enemies = new List<Enemy>();
+            if (instance == null)
+                        instance = this;
+                    else if (instance != this)
+                        Destroy(gameObject);
+                    DontDestroyOnLoad(gameObject);
+                    enemies = new List<Enemy>();
         boardScript = GetComponent<BoardManager>();
-        InitGame();
+        boardScript1 = GetComponent<BoardManager1>();
+                    InitGame();
+
+        
     }
 
     //this is called only once, and the parameter tells it to be called only after the scene was loaded
@@ -87,7 +91,13 @@ public class GameManager : MonoBehaviour
         Invoke("HideLevelImage", levelStartDelay);
 
         enemies.Clear();
-        boardScript.SetupScene(level);
+        BoardManagerSelector();
+    }
+
+    private void BoardManagerSelector()
+    {
+        if (level < 5) { boardScript.SetupScene(level); }
+        else if (level > 4) { boardScript1.SetupScene(level); }
     }
 
     private void HideLevelImage()
