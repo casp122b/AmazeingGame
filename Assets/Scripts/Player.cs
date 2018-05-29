@@ -124,6 +124,8 @@ public class Player : MovingObject
         {
             SceneManager.LoadScene(1);
         }
+
+        CheckIfGameWon();
     }
 
     //AttemptMove overrides the AttemptMove function in the base class MovingObject
@@ -149,20 +151,10 @@ public class Player : MovingObject
         //Check if the tag of the trigger collided with is Exit.
         if (collision.tag == "Exit" && enabled)
         {
-            if (GameManager.instance.level >= 21 && health != 0)
-            {
-                SoundManager.instance.PlaySingle(winSound);
-                SoundManager.instance.musicSource.Stop();
-                GameManager.instance.YouWin();
-                GameManager.instance.level = 0;
-            }
-            else
-            {
                 Invoke("Restart", restartLevelDelay);
                 enabled = false;
-            }
-
         }
+
         //Check if the tag of the trigger collided with is Item.
         else if (collision.tag == "Item")
         {
@@ -208,11 +200,11 @@ public class Player : MovingObject
         animator.SetTrigger("isHit");
         health -= loss;
         healthText.text = "Health; " + health;
-        CheckIfGameHasEnded();
+        CheckIfGameover();
     }
 
     //CheckIfGameOver checks if the player is out of health points and if so, ends the game.
-    private void CheckIfGameHasEnded()
+    private void CheckIfGameover()
     {
         //Check if the health point total is less than or equal to zero.
         if (health <= 0)
@@ -220,7 +212,21 @@ public class Player : MovingObject
             SoundManager.instance.PlaySingle(gameOverSound);
             SoundManager.instance.musicSource.Stop();
             GameManager.instance.GameOver();
-            GameManager.instance.level = 0;
+            GameManager.instance.level = -1;
+            health = 100;
+        }
+    }
+
+    private void CheckIfGameWon()
+    {
+        if (GameManager.instance.level == 21 && health != 0)
+        {
+            SoundManager.instance.PlaySingle(winSound);
+            SoundManager.instance.musicSource.Stop();
+            GameManager.instance.YouWin();
+            SceneManager.LoadScene(1);
+            GameManager.instance.level = -1;
+            health = 100;
         }
     }
 }

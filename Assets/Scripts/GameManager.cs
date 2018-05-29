@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void YouWin()
     {
-        levelText.text = "You win!\n" + "Press 'Esc' to return to Main Menu";
+        levelText.text = "You win!\n";  // + "Press 'Esc' to return to Main Menu"
         levelImage.SetActive(true);
         enabled = false;
     }
