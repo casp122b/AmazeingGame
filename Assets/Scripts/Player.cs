@@ -35,6 +35,7 @@ public class Player : MovingObject
     private Animator animator;
     private int health;
     private int currentLevel;
+    private int damageReduction;
     private SpriteRenderer _renderer;
     private Vector2 touchOrigin = -Vector2.one;
     private GameObject inventory;
@@ -171,11 +172,13 @@ public class Player : MovingObject
         else if(collision.tag == "Gem")
         {
             inventory.GetComponent<Inventory>().AddItem(0);
+            damageReduction = 7;
             collision.gameObject.SetActive(false);
         }
         else if(collision.tag == "Ring")
         {
             inventory.GetComponent<Inventory>().AddItem(1);
+            damageReduction = 10;
             collision.gameObject.SetActive(false);
         }
     }
@@ -211,7 +214,14 @@ public class Player : MovingObject
     public void TakeDamage(int loss)
     {
         animator.SetTrigger("isHit");
-        health -= loss;
+        if(loss > damageReduction)
+        {
+            health -= (loss - damageReduction);
+        }
+        else if(loss < damageReduction)
+        {
+            health -= 0;
+        }
         healthText.text = "Health; " + health;
         CheckIfGameover();
     }
