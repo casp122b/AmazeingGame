@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         doingSetup = true;
         levelImage = GameObject.Find("LevelImage");
-        levelText = GameObject.Find("LevelText").GetComponent<Text>();
+        levelText = GameObject.Find(name: "LevelText").GetComponent<Text>();
         levelText.text = "LOADING";
         levelImage.SetActive(true);
         Invoke("HideLevelImage", levelStartDelay);

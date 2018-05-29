@@ -151,7 +151,7 @@ public class Player : MovingObject
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Check if the tag of the trigger collided with is Exit.
-        if (collision.tag == "Exit")
+        if (collision.tag == "Exit" && enabled)
         {
             Invoke("Restart", restartLevelDelay);
             enabled = false;
