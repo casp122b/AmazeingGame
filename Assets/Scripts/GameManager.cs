@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public BoardManager boardScript;
     public BoardManager1 boardScript1;
+    public BoardManager2 boardScript2;
+    public BoardManager3 boardScript3;
     public int healthPoints = 100;
     public int enemyHealthPoints = 100;
     public int level = 0;
@@ -34,7 +36,9 @@ public class GameManager : MonoBehaviour
                     enemies = new List<Enemy>();
         boardScript = GetComponent<BoardManager>();
         boardScript1 = GetComponent<BoardManager1>();
-                    InitGame();
+        boardScript2 = GetComponent<BoardManager2>();
+        boardScript3 = GetComponent<BoardManager3>();
+        InitGame();
 
         
     }
@@ -96,8 +100,10 @@ public class GameManager : MonoBehaviour
 
     private void BoardManagerSelector()
     {
-        if (level < 11) { boardScript.SetupScene(level); }
-        else if (level > 10) { boardScript1.SetupScene(level); }
+        if (level < 5) { boardScript.SetupScene(level); }
+        else if (level > 4 && level < 10) { boardScript1.SetupScene(level); }
+        else if (level > 9 && level < 15) { boardScript2.SetupScene(level); }
+        else if (level > 14 && level < 20) { boardScript3.SetupScene(level); }
     }
 
     private void HideLevelImage()

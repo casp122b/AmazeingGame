@@ -61,8 +61,8 @@ MonoBehaviour:
     minimum: 8
     maximum: 12
   potionCount:
-    minimum: 2
-    maximum: 4
+    minimum: 1
+    maximum: 2
   itemCount:
     minimum: 1
     maximum: 1
@@ -82,10 +82,8 @@ MonoBehaviour:
   - {fileID: 110520, guid: 022eda2f1f0cb45e28ff6840b68928bc, type: 2}
   potionTiles:
   - {fileID: 1475223962490612, guid: 3b8707033d6f0cb4d97d3e0783919125, type: 2}
-  itemTiles:
-  - {fileID: 1113035672042762, guid: 2cffd98b2b7bc5643af676d433ef4564, type: 2}
-  item2Tiles:
-  - {fileID: 1002147212543192, guid: f1694f9e26d3b7f469c9d3300f25bcfd, type: 2}
+  itemTiles: []
+  item2Tiles: []
   enemyTiles:
   - {fileID: 1845129757669088, guid: 309ab7fe0b5fe254e861b78bc5981ef9, type: 2}
   - {fileID: 1958042358238848, guid: 59f573a51a1d9bd41a7e0fc09275bf12, type: 2}
@@ -114,7 +112,7 @@ MonoBehaviour:
     maximum: 3
   itemCount:
     minimum: 1
-    maximum: 3
+    maximum: 1
   item2Count:
     minimum: 1
     maximum: 1
@@ -159,8 +157,8 @@ MonoBehaviour:
     minimum: 12
     maximum: 26
   potionCount:
-    minimum: 2
-    maximum: 4
+    minimum: 1
+    maximum: 3
   exit: {fileID: 1833683045943052, guid: 4afaf99f4ea313842971fdef34df0085, type: 2}
   floorTiles:
   - {fileID: 110520, guid: 3e71327f62ba5eb42a1279378986d2ce, type: 2}
@@ -232,6 +230,8 @@ MonoBehaviour:
   turnDelay: 0.1
   boardScript: {fileID: 0}
   boardScript1: {fileID: 0}
+  boardScript2: {fileID: 0}
+  boardScript3: {fileID: 0}
   healthPoints: 100
   enemyHealthPoints: 100
   level: 0
