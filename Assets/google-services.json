@@ -1,0 +1,75 @@
+{
+  "project_info": {
+    "project_number": "558443986015",
+    "firebase_url": "https://amazeinggame-a414a.firebaseio.com",
+    "project_id": "amazeinggame-a414a",
+    "storage_bucket": "amazeinggame-a414a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558443986015:android:3a70d89730d2140d",
+        "android_client_info": {
+          "package_name": "com.example.casper.amazeingmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558443986015-apdqb6d6gfbt2ev6ribeuhq42013q6qq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.casper.amazeingmobile",
+            "certificate_hash": "b38c25ffb617c654515d4cc0b5a98daee82b7122"
+          }
+        },
+        {
+          "client_id": "558443986015-nfk2agniuvj2rcrvvs56tk4bq13fkjph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.casper.amazeingmobile",
+            "certificate_hash": "7b63de757061359cac9e8dd555248bcfd0f7b4ca"
+          }
+        },
+        {
+          "client_id": "558443986015-f4aarf1v5kmv671dt0m2df5arm4eefe1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.casper.amazeingmobile",
+            "certificate_hash": "3cc8a94bc856c756e5ba4139b0d8d04d27886873"
+          }
+        },
+        {
+          "client_id": "558443986015-oo47nql5svo3cg0klrf0f5ffkkogkf0v.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "558443986015-oo47nql5svo3cg0klrf0f5ffkkogkf0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHqPy8BBmUpN4YvTk0MBbTZRzlUyv05n0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558443986015-oo47nql5svo3cg0klrf0f5ffkkogkf0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

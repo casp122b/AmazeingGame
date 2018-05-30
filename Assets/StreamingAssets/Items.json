@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title": "Gem of Lesser enhancement",
+    "stats": {
+      "damage": 10,
+      "defense": 7
+    },
+    "description": "This gem grants a lesser boost because it's shiny and blue!",
+    "stackable": false,
+    "rarity": "Common",
+    "slug": "gem"
+  },
+  {
+    "id": 1,
+    "title": "Ring of Power",
+    "stats": {
+      "damage": 12,
+      "defense": 10
+    },
+    "description": "A golden ring which has been magically enchanted to improve a warriors combat ability",
+    "stackable": false,
+    "rarity": "Rare",
+    "slug": "ring"
+  }
+]

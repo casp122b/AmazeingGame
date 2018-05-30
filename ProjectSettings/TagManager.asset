@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item
+  - Exit
+  - Enemy
+  - Wall
+  - Potion
+  - Gem
+  - Ring
   layers:
   - Default
   - TransparentFX
@@ -13,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ColliderLayer
   - 
   - 
   - 
@@ -40,4 +47,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 3967618025
+    locked: 0
+  - name: Item
+    uniqueID: 1813152515
+    locked: 0
+  - name: Unit
+    uniqueID: 1254015295
+    locked: 0
+  - name: Obstacle
+    uniqueID: 1762053173
     locked: 0
