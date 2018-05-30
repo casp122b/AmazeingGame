@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.05882353, g: 1, b: 0.14509805, a: 1}
+  m_Color: {r: 0, g: 0.8509804, b: 0.92941177, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -541,8 +541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011444001, y: 355.1095}
-  m_SizeDelta: {x: 409.9, y: 50.4}
+  m_AnchoredPosition: {x: 38.95, y: 352}
+  m_SizeDelta: {x: 496.7, y: 135.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725912641
 MonoBehaviour:
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.058823526, g: 1, b: 0.14320485, a: 1}
+  m_Color: {r: 0, g: 0.8509804, b: 0.92941177, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -578,7 +578,12 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Welcome to the A"maze"ing Gladiator game.
 
-    Please Log In or create a User.'
+    Please Log In or create a User.
+
+
+    When a user is created please visit the Forum Website.
+
+    https://amazeinggame-a414a.firebaseapp.com/'
 --- !u!222 &725912642
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1162,7 +1167,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.81137544, g: 0.8161765, b: 0.46810123, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.58002025, b: 0.63235295, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1457,7 +1462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.05882353, g: 1, b: 0.14509805, a: 1}
+  m_Color: {r: 0, g: 0.8509804, b: 0.92941177, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
