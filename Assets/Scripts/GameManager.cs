@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         if (level < 5) { boardScript.SetupScene(level); }
         else if (level > 4 && level < 10) { boardScript1.SetupScene(level); }
         else if (level > 9 && level < 15) { boardScript2.SetupScene(level); }
-        else if (level > 14 && level < 20) { boardScript3.SetupScene(level); }
+        else if (level > 14) { boardScript3.SetupScene(level); }
     }
 
     private void HideLevelImage()
