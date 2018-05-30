@@ -95,7 +95,6 @@ MonoBehaviour:
   enemyTiles:
   - {fileID: 1845129757669088, guid: 309ab7fe0b5fe254e861b78bc5981ef9, type: 2}
   - {fileID: 1958042358238848, guid: 59f573a51a1d9bd41a7e0fc09275bf12, type: 2}
-  - {fileID: 1803514404096730, guid: 4e16e6cdcb2200e42b4229a52c692072, type: 2}
   outerWallTiles:
   - {fileID: 110520, guid: 7094f72151ec74f569c4e03f1ec0f8e7, type: 2}
   - {fileID: 110520, guid: b0ace21a29149403094422fb3bd96aa9, type: 2}
@@ -115,28 +114,29 @@ MonoBehaviour:
   rows: 10
   wallCount:
     minimum: 5
-    maximum: 9
+    maximum: 8
   potionCount:
-    minimum: 1
-    maximum: 3
-  exit: {fileID: 110520, guid: cb0f3020bafec423aa31d0e491c4b811, type: 2}
+    minimum: 3
+    maximum: 5
+  exit: {fileID: 1833683045943052, guid: 4afaf99f4ea313842971fdef34df0085, type: 2}
   floorTiles:
   - {fileID: 110520, guid: 3e71327f62ba5eb42a1279378986d2ce, type: 2}
   - {fileID: 110520, guid: 570154b129ade1d4bb4873f0682803d6, type: 2}
   - {fileID: 110520, guid: 8a8b93b0d8235474389c1095216006ed, type: 2}
-  - {fileID: 110520, guid: aaf15b89b38114446b877a875bfb5a5a, type: 2}
+  - {fileID: 1235041663061910, guid: aaf15b89b38114446b877a875bfb5a5a, type: 2}
   wallTiles:
-  - {fileID: 110520, guid: 2570048905bd94d6f8a99d13b80daf90, type: 2}
-  - {fileID: 110520, guid: b86334000bc0f47ba8dd33ea88cfcdb1, type: 2}
+  - {fileID: 1601856841188886, guid: fd5f51d73a60c1a4486479643df28886, type: 2}
+  - {fileID: 1650816557412360, guid: c8581e02674e0dd4d8120e38155cc2f8, type: 2}
   potionTiles:
   - {fileID: 1475223962490612, guid: 3b8707033d6f0cb4d97d3e0783919125, type: 2}
   enemyTiles:
   - {fileID: 1803514404096730, guid: 4e16e6cdcb2200e42b4229a52c692072, type: 2}
   - {fileID: 1958042358238848, guid: 59f573a51a1d9bd41a7e0fc09275bf12, type: 2}
   outerWallTiles:
-  - {fileID: 110520, guid: 7094f72151ec74f569c4e03f1ec0f8e7, type: 2}
-  - {fileID: 110520, guid: b0ace21a29149403094422fb3bd96aa9, type: 2}
-  - {fileID: 110520, guid: e85c94355cc4641da919bd5d0ac956d4, type: 2}
+  - {fileID: 1340722696422226, guid: d417113151e75a545880f86cd987acb0, type: 2}
+  - {fileID: 1987921082544790, guid: f31029aba3572074b9fb23e0813b046a, type: 2}
+  - {fileID: 1466130487950616, guid: 8d609a8681903774ca7099e5a6f74bdc, type: 2}
+  - {fileID: 1355642276998374, guid: 309d1a71723fc9248b2a129c7c8056af, type: 2}
 --- !u!114 &114960849430246606
 MonoBehaviour:
   m_ObjectHideFlags: 1
