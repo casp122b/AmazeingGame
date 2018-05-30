@@ -48,7 +48,7 @@ public class CreateUser : MonoBehaviour {
                 FirebaseUser newUser = task.Result;
                 Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
-                SceneManager.LoadSceneAsync("CharaterProfileScene");
+                SceneManager.LoadSceneAsync("MenuScene");
             });
     }
     public void CreateUserButton()

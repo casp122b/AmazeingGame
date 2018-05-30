@@ -30,4 +30,9 @@ public class MenuButtonHandler : MonoBehaviour
     {
         SceneManager.LoadScene(SettingsScene);
     }
+
+    public void WebForumBtn()
+    {
+        Application.OpenURL("https://amazeinggame-a414a.firebaseapp.com/");
+    }
 }
