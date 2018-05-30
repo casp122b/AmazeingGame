@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 98865780}
   - component: {fileID: 98865779}
   m_Layer: 5
-  m_Name: Create Profile
+  m_Name: Charater Profile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1361,7 +1361,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Create Profile
+  m_Text: Charater Profile
 --- !u!222 &1869817047
 CanvasRenderer:
   m_ObjectHideFlags: 0
