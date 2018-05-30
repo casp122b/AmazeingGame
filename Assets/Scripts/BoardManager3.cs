@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class BoardManager1 : MonoBehaviour
+public class BoardManager3 : MonoBehaviour
 {
 
     [Serializable]

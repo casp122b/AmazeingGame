@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class BoardManager1 : MonoBehaviour
+public class BoardManager2 : MonoBehaviour
 {
 
     [Serializable]
@@ -22,12 +22,16 @@ public class BoardManager1 : MonoBehaviour
 
     public int columns = 8;
     public int rows = 8;
-    public Count wallCount = new Count(15, 25);
-    public Count potionCount = new Count(2, 6);
+    public Count wallCount = new Count(5, 9);
+    public Count potionCount = new Count(1, 3);
+    public Count itemCount = new Count(1, 1);
+    public Count item2Count = new Count(1, 1);
     public GameObject exit;
     public GameObject[] floorTiles;
     public GameObject[] wallTiles;
     public GameObject[] potionTiles;
+    public GameObject[] itemTiles;
+    public GameObject[] item2Tiles;
     public GameObject[] enemyTiles;
     public GameObject[] outerWallTiles;
 
@@ -97,6 +101,8 @@ public class BoardManager1 : MonoBehaviour
         InitializeList();
         LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
         LayoutObjectAtRandom(potionTiles, potionCount.minimum, potionCount.maximum);
+        LayoutObjectAtRandom(itemTiles, itemCount.minimum, itemCount.maximum);
+        LayoutObjectAtRandom(item2Tiles, item2Count.minimum, item2Count.maximum);
         int enemyCount = (int)Mathf.Log(level, 2f);
         LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
         Instantiate(exit, new Vector3(columns - 1, rows - 1, 0F), Quaternion.identity);
