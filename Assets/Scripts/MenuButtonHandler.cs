@@ -1,11 +1,23 @@
-﻿using System.Collections;
+﻿using Firebase.Auth;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuButtonHandler : MonoBehaviour
 {
+    FirebaseAuth auth;
 
+    public void Awake()
+    {
+        auth = FirebaseAuth.DefaultInstance;
+        DontDestroyOnLoad(auth);
+    }
+
+    private void DontDestroyOnLoad(FirebaseAuth auth)
+    {
+
+    }
     public void CreateProfileBtn(string newGame)
     {
         SceneManager.LoadScene(newGame);
